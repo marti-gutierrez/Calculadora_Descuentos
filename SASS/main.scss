@@ -1,0 +1,124 @@
+:root {
+    --background : #181818;
+    --font-color : white;
+    --title-contrast: #B70E21;
+    --background-form: #222222;
+    --background-info: black;
+    --input-line: #D63031;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+}
+body{
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--background);
+    color: var(--font-color);
+    padding: 0 1.5em;
+}
+.container {
+    max-inline-size: 920px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    padding: 1.5rem;
+}
+.brand {
+    text-align: center;
+    font-size: 3rem;
+    margin-block-end: 20px;
+    &__span {
+        color: var(--title-contrast) ;
+    }
+}
+
+.container-calculator {
+    box-shadow: 0 0 20px 0 rgba(255,255,255,.3);
+    & > * {
+        padding: 1em;
+    }
+}
+
+.calculator {
+    background-color: var(--background-form);
+    &__form {
+       display: grid;
+       grid-template-columns: 1fr 1fr; 
+    }
+    &__input-group {
+        margin: 0;
+        padding: 1rem ;
+    }
+
+    &__input-group:nth-child(3),
+    &__input-group:nth-child(4) {
+        grid-column: 1 / 3;
+    }
+
+    &__button,
+    &__input,
+    &__result {
+        inline-size: 100%;
+        block-size: 3rem;
+        padding: .7rem;
+        border: none;
+        background: none;
+        outline: 0;
+        border-block-end: 1px solid var(--input-line);
+        color: var(--font-color);
+    }
+    &__result {
+        font-size: 2rem;
+        text-align: center;
+        padding-block-end: 1rem;
+    }
+    &__button {
+        padding: 1rem;
+        background-color: var(--title-contrast);
+        border-radius: 20px;
+        border: none;
+        text-transform: uppercase;
+        font-weight: bold;
+        color: var(--background-info);
+    }
+    &__button:hover,
+    &__button:focus {
+        background-color: var(--input-line);
+        color: var(--font-color);
+        transition: background-color 1s ease-out;
+        outline: 0;
+    }
+}
+.info-container {
+    background-color: var(--background-info);
+    &__title,
+    &__description,
+    &__company {
+        text-align: center;
+        margin: 0 0 1rem 0;
+    }
+}
+/*Large screen*/
+@media (min-width: 700px) {
+    body {
+        padding: 0 4rem;
+    }
+    .container-calculator {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        & > * {
+            padding: 2em;
+        }
+    }
+    .info-container {
+        &__title,
+        &__description,
+        &__company {
+            padding: 1em;
+            text-align: left;
+        }
+    }
+}

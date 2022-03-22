@@ -8,5 +8,5 @@ getDiscountPrice = () => {
 
     const newProductPrice = discountedPrice(valuePrice,valueDiscount);
     const responseInLabel = document.getElementById("replyP");
-    responseInLabel.innerText = `El precio es de ${newProductPrice}`;
+    responseInLabel.innerText = `$ ${newProductPrice}`;
 };
